@@ -1,2 +1,1 @@
-# maps-samples
-Leaflet maps
+# m2-upc2018

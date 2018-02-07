@@ -1,0 +1,254 @@
+<html>
+
+<head>
+  <title>Carto</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a target="_self" class="navbar-brand" href="index.html">
+            Inicio
+        </a>
+    <span> Introducción a Carto.com </span>
+  </nav>
+  <div class="container">
+    <h5>Introducción a Carto.com </h5>
+    <a href="https://carto.com/" target="_blank">
+            <img width=100 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/CARTO-logo.svg/1200px-CARTO-logo.svg.png">
+        </a>
+
+    <div class="alert alert-warning">
+      <h5> Recursos Carto</h5>
+      <ul>
+        <li>
+          Web<br>
+          <a target="_blank" href="https://carto.com//">https://carto.com//</a>
+        </li>
+        <li>
+          Productos<br>
+          <a target="_blank" href="https://carto.com/products/">https://carto.com/products/</a>
+        </li>
+        <li>
+          Blog<br>
+          <a target="_blank" href="https://carto.com/blog/">https://carto.com/blog/</a>
+        </li>
+        <li>
+          Builder<br>
+          <a target="_blank" href="https://carto.com/builder/">https://carto.com/builder/</a>
+        </li>
+        <li>
+          Carto.js<br>
+          <a target="_blank" href="https://carto.com/docs/carto-engine/carto-js/getting-started/">https://carto.com/docs/carto-engine/carto-js/getting-started/</a>
+        </li>
+        <li>
+          GitHUB<br>
+          <a target="_blank" href="https://github.com/CartoDB">https://github.com/CartoDB</a>
+        </li>
+        <li>
+          Tutoriales<br>
+          <a target="_blank" href="https://carto.com/learn/guides/">https://carto.com/learn/guides/</a><br>
+          <a target="_blank" href="https://carto.com/docs/">https://carto.com/docs/</a><br>
+
+        </li>
+        <li>
+          Videos<br>
+          <a target="_blank" href="https://www.youtube.com/watch?v=P6cabBvm5xQ">https://www.youtube.com/watch?v=P6cabBvm5xQ</a><br>
+          <a target="_blank" href="https://www.youtube.com/watch?v=lto7Z5wC2hQ">https://www.youtube.com/watch?v=lto7Z5wC2hQ</a><br>
+          <a target="_blank" href="https://www.youtube.com/watch?v=3KHU2eOYR8Q">https://www.youtube.com/watch?v=3KHU2eOYR8Q</a><br>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="soft">
+      <h5>Descripción</h5>Carto es una empresa privada de Location Intelligence que ofrece una plataforma para realizar funciones GIS i de visualización de datos.
+      Sus principales productos son :
+      <ul>
+        <li> Carto Builder</li>
+        <li> Carto Engine</li>
+
+      </ul>
+      <h5> ¿Cómo empezar?</h5>
+
+      <p>Vamos a realizar un 2 ejercicios con Carto</p>
+      <h5>Ejercicio 1: Locales vacíos cerca de estaciones de metro</h5>
+
+      <h6>Paso 1</h6>
+      <ul>
+        <li>Descargamos en formato CSV los locales de planta baja BCN
+          <a target="_blank" href="http://opendata-ajuntament.barcelona.cat/data/dataset/62fb990e-4cc3-457a-aea1-497604e15659/resource/18cbddda-ad3f-41b8-8229-064f0faa930b/download/2016_cens_locals_plantabaixa.csv">
+              http://opendata-ajuntament.barcelona.cat/data/dataset/62fb990e-4cc3-457a-aea1-497604e15659/resource/18cbddda-ad3f-41b8-8229-064f0faa930b/download/2016_cens_locals_plantabaixa.csv</a>
+        </li>
+        <li>Descargamos en formato CSV paradas de metro BCN
+          <a target="_blank" href="http://opendata-ajuntament.barcelona.cat/resources/bcn/TRANSPORTS.csv">
+            http://opendata-ajuntament.barcelona.cat/resources/bcn/TRANSPORTS.csv
+              </a>
+        </li>
+
+
+        </li>
+
+      </ul>
+      <h6>Paso 2 -Cargamos ficheros a Carto</h6>
+      <ul>
+        <li>Entramos en Carto <mark>-->Datasets-->New Datasets</mark>
+        </li>
+        <li>Visualizamos CSV.</li>
+      </ul>
+
+      <h6>Paso 3 -Filtramos CSV via SQL</h6>
+      <ul>
+        <li><b>Transports:</b> Solo Paradas de metro
+        </li>
+        <li>
+          <pre><code class="prettyprint">
+            SELECT * FROM transports where codi_capa='K001'
+          </code></pre>
+        </li>
+        <li><b>table_2016_cens_locals_plantabaixa:</b> Solo Locales vacíos
+        </li>
+        <li>
+          <pre><code class="prettyprint">
+            SELECT * FROM table_2016_cens_locals_plantabaixa where id_princip =0
+          </code></pre>
+        </li>
+      </ul>
+
+
+      <h6>Paso 4 -Creamos Mapa</h6>
+      <ul>
+        <li><mark>Your map --> New Map-->Seleccionamos nuestros 2 Datasets</mark>
+        </li>
+        <li>
+        Exploramos herramientas:  Cambiamos estilos
+        </li>
+      </ul>
+
+
+      <h6>Paso 5 -Analisis</h6>
+      <ul>
+        <li><mark>Selecionamos transports --> Analysis -->Add new Analysis</mark>
+        </li>
+        <li>
+        <mark>Analyze and Predict --> Find nearest-->Add Analysis</mark>
+        </li>
+
+        <li>
+        <mark>Input --> transports</mark>
+        </li>
+        <li>
+        <mark>target -->table_2016_cens_locals_plantabaixas </mark>
+        </li>
+        <li>
+        <mark>Maxresults --> 1</mark>
+        </li>
+        <li>
+        <mark>Rename Layers-Locales Metro</mark>
+        </li>
+        <li>
+        <mark>Configuramos POP-UP</mark>
+        </li>
+      </ul>
+
+      <h6>Paso 6 -Publicar mapa</h6>
+      <ul>
+
+        <li>
+        <mark>Embed it</mark>
+        </li>
+          <li>
+            Ejemplo visor
+          </li>
+        <li>
+          <pre><code class="prettyprint">
+      &#x3C;html&#x3E;
+      &#x3C;head&#x3E;
+       &#x3C;title&#x3E;Carto embed&#x3C;/title&#x3E;
+        &#x3C;meta charset="utf-8" /&#x3E;
+        &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
+        &#x3C;link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /&#x3E;
+        &#x3C;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"&#x3E;
+      &#x3C;/head&#x3E;
+      &#x3C;body&#x3E;
+
+      &#x3C;div id='container'&#x3E;
+      &#x3C;h4&#x3E;Mapa Locales cerca del metro&#x3C;/h4&#x3E;
+
+      &#x3C;iframe width="100%" height="520" frameborder="0" src="https://gismasterm2.carto.com/builder/dfd87a0f-3577-44eb-b9a5-2ac6f21bf715/embed"
+      allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&#x3E;&#x3C;/iframe&#x3E;
+
+      &#x3C;/div&#x3E;
+      &#x3C;/body&#x3E;
+      &#x3C;/html&#x3E;
+          </code></pre>
+        </li>
+      </ul>
+
+
+      <h5>Ejercicio 2:Visualizacion Mapa accidentes</h5>
+      <h6>Paso 1</h6>
+      <ul>
+        <li>Descargamos en formato CSV los accidentes en <a target="_blank" href="http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn">
+              http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn</a>
+        </li>
+        <li><mark>Cargamos Dataset--> Creamos Mapa</mark>
+        </li>
+      </ul>
+      <h6>Paso 2</h6>
+      <ul>
+
+        <li><mark>Style--> 1-Animated</mark>
+        </li>
+        <li><mark>Campo animar Hora del dia</mark>
+        </li>
+      </ul>
+
+      <h6>Paso 3</h6>
+      <ul>
+        <li>
+          Ejemplo visor
+        </li>
+      <li>
+        <pre><code class="prettyprint">
+          &#x3C;html&#x3E;
+        &#x3C;head&#x3E;
+         &#x3C;title&#x3E;Carto embed&#x3C;/title&#x3E;
+          &#x3C;meta charset="utf-8" /&#x3E;
+          &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
+          &#x3C;link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /&#x3E;
+          &#x3C;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"&#x3E;
+        &#x3C;/head&#x3E;
+        &#x3C;body&#x3E;
+
+        &#x3C;div id='container'&#x3E;
+        &#x3C;h4&#x3E;Mapa animado accidentes&#x3C;/h4&#x3E;
+        &#x3C;iframe width="100%" height="520" frameborder="0" src="https://gismasterm2.carto.com/builder/fb7f02eb-9f4b-4be9-8e1d-6b42e7b04489/embed"
+        allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&#x3E;&#x3C;/iframe&#x3E;
+
+        &#x3C;/div&#x3E;
+
+        &#x3C;/body&#x3E;
+        &#x3C;/html&#x3E;
+        </code></pre>
+      </li>
+    </ul>
+
+
+
+
+      <!--end container -->
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>
